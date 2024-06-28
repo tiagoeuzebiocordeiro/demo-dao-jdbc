@@ -8,9 +8,11 @@ import model.entities.Seller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         /*My program doesn't know the impl, only knows the interface, this is a
         method to make a
         dependecy injection
@@ -41,5 +43,12 @@ public class Program {
         sellerDao.update(seller2);
         //update completed
         System.out.println("updt. completed.");
+
+        System.out.println("Test 6, seller delete");
+        System.out.println("Enter a ID to make a delete operation: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete completed.");
+        sc.close();
     }
 }
